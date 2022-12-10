@@ -6,3 +6,12 @@ resource "aws_vpc" "main" {
     Name = var.vpcName
   }
 }
+
+resource "aws_vpc" "bastion" {
+  cidr_block       = var.bastionVpcCidrBlock
+  instance_tenancy = "default"
+
+  tags = {
+    Name = var.bastionVpcName
+  }
+}
