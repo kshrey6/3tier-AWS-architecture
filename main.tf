@@ -16,3 +16,23 @@ module "igw" {
   mainVpcId = module.vpc.mainVpcId
   bastionVpcId = module.vpc.bastionVpcId
 }
+
+# Subnets
+
+module "subnets" {
+  source = "./modules/subnets"
+  bastionPublicVpcId = module.vpc.bastionVpcId
+  bastionPublicACidr = var.bastionPublicACidr
+
+  mainVpcId = module.vpc.mainVpcId
+  #privateSubnetA
+  aza = var.aza
+  pvtSubnetACidr = var.pvtSubnetACidr
+  subnetNameA = var.subnetNameA
+
+  #privateSubnetB
+  azb = var.azb
+  pvtSubnetBCidr = var.pvtSubnetBCidr
+  subnetNameB = var.subnetNameB
+
+}

@@ -1,24 +1,18 @@
-# VPC
-variable "vpcCidrBlock" {
+# bastionSubnet
+variable "bastionPublicVpcId" {
   type = string
 }
-variable "vpcName" {
-  type = any
-}
 
-variable "bastionVpcCidrBlock" {
-  type = string
-}
-variable "bastionVpcName" {
-  type = any
-}
-
-
-#subnets
 variable "bastionPublicACidr" {
   type = string
 }
 
+
+variable "mainVpcId" {
+  type = any
+}
+
+#privateA
 variable "aza" {
   type = any
 }
