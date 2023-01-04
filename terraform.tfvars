@@ -17,3 +17,12 @@ subnetNameA = ["FrontendA", "ApplicationA", "DBA"]
 azb = ["us-west-2b"]
 pvtSubnetBCidr = ["172.32.216.0/21","172.32.224.0/19","172.32.192.0/20"]
 subnetNameB = ["FrontendB", "ApplicationB", "DBB"]
+#publciSubnetA
+mainPublicACidr = "172.32.64.0/20"
+
+
+# RouteTable
+RTCidr = "0.0.0.0/0"
+mainPrivateRtCidr = "0.0.0.0/0"
+mainRtCidr = "0.0.0.0/0"
+

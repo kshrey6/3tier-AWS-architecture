@@ -17,6 +17,12 @@ module "igw" {
   bastionVpcId = module.vpc.bastionVpcId
 }
 
+#NatGW
+module "natGw" {
+  source = "./modules/nat"
+  natSubnetId = module.subnets.mainPublicA
+}
+
 # Subnets
 
 module "subnets" {
@@ -34,5 +40,27 @@ module "subnets" {
   azb = var.azb
   pvtSubnetBCidr = var.pvtSubnetBCidr
   subnetNameB = var.subnetNameB
+  mainPublicACidr = var.mainPublicACidr
+  #publicSubnetA
+  
 
+}
+
+#RouteTable
+#bastion
+
+module "routeTable" {
+  source = "./modules/routeTable"
+  bastionVpc_id = module.vpc.bastionVpcId
+  RTCidr = var.RTCidr
+  bastionIgwId = module.igw.bastionIgwId
+
+#mainPrivate
+  mainVpc_id = module.vpc.mainVpcId
+  mainPrivateRtCidr = var.mainPrivateRtCidr
+  mainNatId = module.natGw.mainNatId
+
+#mainPublic
+  mainRtCidr = var.mainRtCidr
+  mainIgwId = module.igw.mainIgwId
 }

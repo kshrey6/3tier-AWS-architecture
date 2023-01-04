@@ -42,3 +42,21 @@ variable "subnetNameA" {
 variable "subnetNameB" {
   type = any
 }
+
+variable "mainPublicACidr" {
+  type = any
+}
+
+#RouteTable
+variable "RTCidr" {
+  type = any
+}
+
+variable "mainRtCidr" {
+  type = any
+}
+
+variable "mainPrivateRtCidr" {
+  type = any
+}
+

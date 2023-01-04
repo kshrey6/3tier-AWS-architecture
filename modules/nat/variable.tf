@@ -1,0 +1,3 @@
+variable "natSubnetId" {
+  type = any
+}
