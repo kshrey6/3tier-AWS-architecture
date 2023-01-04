@@ -36,3 +36,8 @@ variable "subnetNameA" {
 variable "subnetNameB" {
   type = any
 }
+
+#main public
+variable "mainPublicACidr" {
+  type = any
+}

@@ -7,6 +7,17 @@ resource "aws_subnet" "bastionPublicA" {
   }
 }
 
+# MainSubnets
+
+resource "aws_subnet" "mainPublicA" {
+  vpc_id     = var.mainVpcId
+  cidr_block = var.mainPublicACidr
+
+  tags = {
+    Name = "mainPublicSubnet"
+  }
+}
+
 resource "aws_subnet" "privateSubnetA" {
   count = length(var.pvtSubnetACidr)
   vpc_id                  = var.mainVpcId
