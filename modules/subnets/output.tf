@@ -10,12 +10,21 @@ output "bastionPublicSubnet" {
 #   value = [for sidB in aws_subnet.privateSubnetB: sidB.id]
 # }
 
+# output "privateSubnetA" {
+#   value = aws_subnet.privateSubnetA.*.id
+# }
+
+# output "privateSubnetB" {
+#   value = aws_subnet.privateSubnetB[*].id
+# }
+
 output "privateSubnetA" {
-  value = aws_subnet.privateSubnetA[*].id
+  value = "${formatlist("%v",aws_subnet.privateSubnetA.*.id)}"
 }
 
+
 output "privateSubnetB" {
-  value = aws_subnet.privateSubnetB[*].id
+  value = "${formatlist("%v", aws_subnet.privateSubnetB.*.id)}"
 }
 
 output "mainPublicA" {
