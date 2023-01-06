@@ -64,3 +64,19 @@ module "routeTable" {
   mainRtCidr = var.mainRtCidr
   mainIgwId = module.igw.mainIgwId
 }
+
+#RT Association
+
+module "routeTableAssociation" {
+  source = "../routeTableAssociation"
+  bastionSubnetId = module.subnets.bastionPublicSubnet
+  bastionRtId = module.routeTable.bastionRtId
+
+  mainPulicSubnetId = module.subnets.mainPublicA
+  mainPublicRtId = module.routeTable.mainPublicRtId
+
+  mainPrivateSubnetAId = module.subnets.privateSubnetA
+  mainPrivateSubnetBId = module.subnets.privateSubnetB
+  mainPrivateRtId = module.routeTable.mainPrivateRtId
+
+}
