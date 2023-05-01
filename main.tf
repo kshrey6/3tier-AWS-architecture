@@ -86,6 +86,7 @@ module "ec2" {
   bastionAmiId = var.bastionAmiId
   mainBastionInstanceType = var.mainBastionInstanceType
   mainBastionSubnetId = module.subnets.mainPublicA
+  sgId = [ module.sg.sshSgId ]
 #PrivateSubnetA
   privateAInsatceAmiId = var.privateAInsatceAmiId
   mainprivateSubnetAId = module.subnets.privateSubnetA
@@ -97,4 +98,9 @@ module "ec2" {
   mainPrivateBInstanceType = var.mainPrivateBInstanceType
   privateInstanceBName = var.privateInstanceBName
 
+}
+
+module "sg" {
+  source = "./modules/securityGroups"
+  mainVpc_id = module.vpc.mainVpcId
 }

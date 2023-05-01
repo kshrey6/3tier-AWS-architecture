@@ -8,6 +8,7 @@ resource "aws_instance" "mainBastion" {
   instance_type             = var.mainBastionInstanceType
   subnet_id                 = var.mainBastionSubnetId
   key_name                  = var.keyName
+  associate_public_ip_address = true
   security_groups = var.sgId
   tags = {
     Name = "MainBastionInstance"

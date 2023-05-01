@@ -7,14 +7,14 @@ output "MainPrivateSubnetBInfo" {
 }
 
 
-output "mainBastionIp" {
-  value = module.ec2.mainBastionIp
-}
+# output "mainBastionIp" {
+#   value = module.ec2.mainBastionIp
+# }
 
-output "mainPrivateAIp" {
-  value = module.ec2.mainPrivateAIp
-}
+# output "mainPrivateAIp" {
+#   value = module.ec2.mainPrivateAIp
+# }
 
-output "mainPrivateBIp" {
-  value = module.ec2.mainPrivateBIp
-}
+# output "mainPrivateBIp" {
+#   value = module.ec2.mainPrivateBIp
+# }
