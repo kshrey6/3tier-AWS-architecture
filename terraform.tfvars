@@ -29,7 +29,7 @@ mainPrivateRtCidr       = "0.0.0.0/0"
 mainRtCidr              = "0.0.0.0/0"
 
 #ec2 Instance
-keyName                 = "us-west-2"
+keyName                 = "synergy-key"
 bastionAmiId            = "ami-03f8756d29f0b5f21"
 mainBastionInstanceType = "t2.micro"
 #privateSubnetA

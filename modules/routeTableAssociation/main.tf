@@ -10,12 +10,12 @@ resource "aws_route_table_association" "mainPublicSubnetA" {
 
 resource "aws_route_table_association" "mainPrivateSubnetA" {
   count = length(var.mainPrivateSubnetAId)
-  subnet_id      = tolist(var.mainPrivateSubnetAId)[count.index]
+  subnet_id      = var.mainPrivateSubnetAId[count.index]
   route_table_id = var.mainPrivateRtId
 }
 
 resource "aws_route_table_association" "mainPrivateSubnetB" {
 count = length(var.mainPrivateSubnetAId)
-  subnet_id      = tolist(var.mainPrivateSubnetAId)[count.index]
+  subnet_id      = var.mainPrivateSubnetAId[count.index]
   route_table_id = var.mainPrivateRtId
 }

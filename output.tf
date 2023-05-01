@@ -1,7 +1,20 @@
 output "MainPrivateSubnetAInfo" {
-  value = module.subnets.privateSubnetA
+  value = join(",",module.subnets.privateSubnetA)
 }
 
 output "MainPrivateSubnetBInfo" {
-  value = module.subnets.privateSubnetB
+  value = join(",",module.subnets.privateSubnetB)
+}
+
+
+output "mainBastionIp" {
+  value = module.ec2.mainBastionIp
+}
+
+output "mainPrivateAIp" {
+  value = module.ec2.mainPrivateAIp
+}
+
+output "mainPrivateBIp" {
+  value = module.ec2.mainPrivateBIp
 }

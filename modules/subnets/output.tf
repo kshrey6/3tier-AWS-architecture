@@ -19,12 +19,12 @@ output "bastionPublicSubnet" {
 # }
 
 output "privateSubnetA" {
-  value = "${formatlist("%v",aws_subnet.privateSubnetA.*.id)}"
+  value = "${aws_subnet.privateSubnetA.*.id}"
 }
 
 
 output "privateSubnetB" {
-  value = "${formatlist("%v", aws_subnet.privateSubnetB.*.id)}"
+  value = "${aws_subnet.privateSubnetB.*.id}"
 }
 
 output "mainPublicA" {
