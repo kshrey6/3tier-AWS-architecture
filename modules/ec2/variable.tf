@@ -10,6 +10,10 @@ variable "mainBastionInstanceType" {
 variable "mainBastionSubnetId" {
   type = any
 }
+variable "sgId" {
+  type = any
+
+ }
 
 #privateSubnetAInstance
 variable "privateAInsatceAmiId" {
